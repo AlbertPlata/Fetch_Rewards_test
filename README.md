@@ -32,3 +32,4 @@ To find duplicated ip
     FROM user_logins
     GROUP BY masked_ip
     HAVING COUNT(1) > 1;
+#### What are the assumptions you made?
