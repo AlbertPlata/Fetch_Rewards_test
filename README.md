@@ -46,3 +46,7 @@ To find duplicated ip
     GROUP BY masked_ip
     HAVING COUNT(1) > 1;
 #### What are the assumptions you made?
+I assume that
+- There are only a few pipelines, wich is easy for the managment
+- Only a few access to the database so skpi a poll connection and thread to process the messages
+In both cases, they have already been explained in my judgment of scalability 
