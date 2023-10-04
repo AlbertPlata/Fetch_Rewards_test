@@ -1,4 +1,17 @@
 # Fetch Rewards Challenge
+# Fetch Rewards Challenge
+
+Execution of scripts, to run the script only need run it your cmd or terminal **python file_name.py** in this case first we run:
+- [init_message.py](https://github.com/AlbertPlata/Fetch_Rewards_test/blob/main/init_message.py)
+	With this I emulated the data received of the SQS request (I did this cos I can't access to  data sample, you find the details of this [here](https://github.com/AlbertPlata/Fetch_Rewards_test/blob/main/issues.md)
+
+Next execution would be:
+- [masking.py](https://github.com/AlbertPlata/Fetch_Rewards_test/blob/main/masking.py)
+Here I used hash encryption then the encryptation created a new [JSON ](https://github.com/AlbertPlata/Fetch_Rewards_test/blob/main/masked_messages.json) file to prepare the data to be loaded.
+
+Finally the last execution is:
+- [load_data.py](https://github.com/AlbertPlata/Fetch_Rewards_test/blob/main/load_data.py)
+	Here read the hashed data, connect with the database, and load using one simple thread
 
 # Final Questions
 #### How would you deploy this application in production?
