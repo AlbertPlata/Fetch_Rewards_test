@@ -18,3 +18,17 @@ We would be on mine, that depends on two principal factors.
 	connection to limit the threads and control the load on the databases.
 	Also, it's highly recommended to use Datawarehouse or Data Lakes, to train the 
 	models and prevent  analyst and data scientist training using productive instances.
+#### How can PII be recovered later on?
+To find duplicated device_id
+
+    SELECT masked_deviceid, COUNT(1) as duplicate_count
+    FROM user_logins
+    GROUP BY masked_device_id
+    HAVING COUNT(1) > 1;
+    
+To find duplicated ip
+
+	SELECT masked_ip, COUNT(1) as duplicate_count
+    FROM user_logins
+    GROUP BY masked_ip
+    HAVING COUNT(1) > 1;
